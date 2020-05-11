@@ -1,0 +1,29 @@
+<div class="container row" *ngFor='let mes of messages'>
+
+    <div class="col-sm-12" *ngIf='mes.firend== true'>
+        <div style="float: left;">
+            <div class="row container message ">
+                
+            <p class="col-md-12">
+                {{mes.message}}
+            </p>
+            </div>
+            <span class="col-md-12 " style="color: white;"> <small>{{mes.time}}</small></span>
+        </div>
+    </div>
+
+    <div class="col-sm-12" *ngIf='mes.firend == false'>
+        <div style="float: right;">
+            <div class="row container message " style="background-color: #05728f;">
+                <p class="col-md-12">
+                    {{mes.message}}
+                </p>
+            </div>
+            <span class="col-md-12 " style="color: white;"> <small>{{mes.time}}</small></span>
+        </div>
+
+    </div>
+
+
+
+</div>  

@@ -1,0 +1,38 @@
+<div class="container form-group row Friend" *ngFor="let f of firends">
+
+    <label  class="col-sm-2" style="left: -20px; top: 0.5rem;">
+        <img  [src]='f.img'>
+    </label>
+
+      <div class="col-sm-6" >
+         <label style="top: 0px;">
+             <h3 type="text"  class="form-control-plaintext" style="top: 10px; letter-spacing: 1px;font-family: serif; font-size: 13px;" >{{f.name}}</h3>
+                 <p style="font-size: 13px;"> 
+                    <span > {{f.message}} </span>
+                    <small class="text-muted" style="margin-right: 1px; ">{{f.time}}</small>
+
+                 </p>
+       </label> 
+
+    </div> 
+
+   <div class="col-sm-2">
+        <label  class="col-sm-2" style=" top: 20px; font-size: 15px;">
+            <i class="badge badge-primary badge-pill" style="
+            height: 1.5rem;
+            width: 1.5rem;
+            padding: 0.5em;
+            border-radius: 50%;">1</i>
+       </label>
+
+    </div>
+
+    <div class="col-sm-1">
+        <label  class="col-sm-2" style=" top: 20px; font-size: 16px;">
+            <span class="fa fa-trash" style="color: #f33131; cursor: pointer;"></span>
+       </label>
+
+    </div>
+
+
+</div> 
