@@ -1,0 +1,21 @@
+.Content{
+    margin-top: 30vh ;
+    width: 40vw !important;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #3d3c3c;
+}
+
+.Content input{
+    margin: 50px 0px;
+    width: 100%;
+    /* background-color: #424244; */
+    /* color: white; */
+
+}
+
+.Content button{
+
+}

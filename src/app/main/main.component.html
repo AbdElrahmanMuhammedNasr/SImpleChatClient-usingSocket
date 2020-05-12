@@ -1,11 +1,8 @@
 
         <div class="row  Content">
      
-            <section class="col-md-2 d-none d-lg-block">
-                <app-side-bar></app-side-bar>
-            </section>
-
-            <section class="col-md-10 Center" >
+    
+            <section class="col-md-12 Center" >
                 
                 <nav class="navbar navbar-expand-sm navbar-light " >
         
@@ -13,14 +10,9 @@
 
                         <a class="navbar-brand"  style="color: white; font-size: 13px;">Chat</a>
 
-                        <div class="chat_img navbar-nav"> 
-                            <input class="form-control text-center" placeholder="Enter name" [(ngModel)]=user>
+                 
 
-                               <!-- <img src="https://ptetutorials.com/images/user-profile.png" >  -->
-                        </div>
-
-                       
-
+            
                       <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
                           <a class="nav-link" href="#">
@@ -37,30 +29,13 @@
 
                 <div class="Chat row justify-content-around" >
 
-                     <section class="col-lg-5 d-none d-lg-block" > 
+                     <section class="col-lg-4 d-none d-lg-block" > 
                         <app-friends></app-friends>
                      </section> 
 
-                    <section class="col-md-auto  col-lg-7 offext-1  RealChat">
+                    <section class="col-md-auto  col-lg-8 offext-1  RealChat">
                             <!-- <app-real-chat></app-real-chat> -->
-                             <!-- <div class="container row" *ngFor='let mes of messag'>
-
-                                <div class="col-sm-12" >
-                                    <div style="float: left;">
-                                        <div class="row container message ">
-                                            
-                                        <p class="col-md-12">
-                                              {{mes.message}} 
-                                            {{mes}}
-                                        </p>
-                                        </div>
-                                          <span class="col-md-12 " style="color: white;"> <small>{{mes.time}}</small></span>  
-                                    </div>
-                                </div> 
-                            
-                        
-                            </div>   -->
-
+                   
                             <div class="container row" *ngFor='let mes of messag'>
 
                                 <div class="col-sm-12" *ngIf='mes.sender != user' >
@@ -68,10 +43,10 @@
                                         <div class="row container message ">
                                             
                                         <p class="col-md-12">
-                                            {{mes.content}}
+                                               {{mes.content}}
                                         </p>
                                         </div>
-                                        <span class="col-md-12 " style="color: white;"> <small>{{mes.time}}</small></span>
+                                        <span class="col-md-12 " style="color: white;">( {{mes.sender}} ) - <small> {{mes.time}}</small></span>
                                     </div>
                                 </div>
                             
@@ -82,7 +57,7 @@
                                                 {{mes.content}}
                                             </p>
                                         </div>
-                                        <span class="col-md-12 " style="color: white;"> <small>{{mes.time}}</small></span>
+                                        <span class="col-md-12 " style="color: white;"> <small>{{mes.time}} </small></span>
                                     </div>
                             
                                 </div>

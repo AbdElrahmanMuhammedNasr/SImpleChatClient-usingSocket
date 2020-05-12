@@ -18,7 +18,7 @@ export class MainComponent implements OnInit {
 
   constructor() { }
   messag = [];
-  user = 'abdo'
+  user = localStorage.getItem('user');
 
   ngOnInit(): void {
     this.connected();
@@ -26,7 +26,7 @@ export class MainComponent implements OnInit {
 
 
   onsendMessage() {
-    this.stompClient.send('/app/chat', {}, JSON.stringify({content: this.messsages.value.message, sender: this.user}));
+    this.stompClient.send('/app/chat', {}, JSON.stringify({content: this.messsages.value.message, sender: localStorage.getItem('user')}));
     this.messsages.reset();
   }
 

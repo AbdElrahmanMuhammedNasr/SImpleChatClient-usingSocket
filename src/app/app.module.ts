@@ -9,7 +9,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { RealChatComponent } from './real-chat/real-chat.component';
 import { FriendsComponent } from './friends/friends.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
+import { LoginComponent } from './login/login.component';
+import {RouterModule, Routes} from '@angular/router';
+
+
+const routes: Routes = [
+  {path:'', redirectTo:'/login',pathMatch:'full'},
+  {path:'login', component: LoginComponent},
+  {path:'chat', component: MainComponent},
+]
 
 
 @NgModule({
@@ -18,12 +26,14 @@ import { SideBarComponent } from './side-bar/side-bar.component';
     MainComponent,
     RealChatComponent,
     FriendsComponent,
-    SideBarComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
