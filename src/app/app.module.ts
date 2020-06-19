@@ -7,7 +7,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { RealChatComponent } from './real-chat/real-chat.component';
 import { FriendsComponent } from './friends/friends.component';
 import { LoginComponent } from './login/login.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -24,7 +23,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     MainComponent,
-    RealChatComponent,
     FriendsComponent,
     LoginComponent
   ],

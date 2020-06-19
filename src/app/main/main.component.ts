@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
@@ -16,22 +17,35 @@ export class MainComponent implements OnInit {
 
   @ViewChild('sendMessage') messsages: NgForm ;
 
-  constructor() { }
-  messag = [];
+  constructor(private http:HttpClient) { }
+  messag : any = [];
   user = localStorage.getItem('user');
 
   ngOnInit(): void {
     this.connected();
+    this.onGetMessages();
   }
 
+  onGetMessages(){
+    this.http.get('http://localhost:8080/getAll').subscribe(
+      data =>{
+        this.messag = data;
+        console.log(data);
+      }
+    )
+  }
 
   onsendMessage() {
+    if(this.messsages.value.message == null){
+
+    }else{
     this.stompClient.send('/app/chat', {}, JSON.stringify({content: this.messsages.value.message, sender: localStorage.getItem('user')}));
     this.messsages.reset();
+    }
   }
 
   connected() {
-    this.socket = new SockJS('http://localhost:8080/chat');
+    this.socket = new SockJS('http://localhost:8080/ws');
     this.stompClient = Stomp.over(this.socket);
 
     const _this = this;
@@ -41,6 +55,7 @@ export class MainComponent implements OnInit {
 
       _this.stompClient.subscribe('/topic/mes', function(res) {
         let data = JSON.parse(res.body);
+        // console.log('data is',data);
         _this.messag.push(data);
       });
 

@@ -34,7 +34,6 @@
                      </section> 
 
                     <section class="col-md-auto  col-lg-8 offext-1  RealChat">
-                            <!-- <app-real-chat></app-real-chat> -->
                    
                             <div class="container row" *ngFor='let mes of messag'>
 
@@ -42,22 +41,22 @@
                                     <div style="float: left;">
                                         <div class="row container message ">
                                             
-                                        <p class="col-md-12">
+                                        <p class="col-md-12 text-center">
                                                {{mes.content}}
                                         </p>
                                         </div>
-                                        <span class="col-md-12 " style="color: white;">( {{mes.sender}} ) - <small> {{mes.time}}</small></span>
+                                        <span class="col-md-12 " style="color: white;">( {{mes.sender}} ) - <small> {{mes.time.split('.')[0]}}</small></span>
                                     </div>
                                 </div>
                             
                                 <div class="col-sm-12" *ngIf='mes.sender === user'>
                                     <div style="float: right;">
                                         <div class="row container message " style="background-color: #05728f;">
-                                            <p class="col-md-12">
+                                            <p class="col-md-12 text-center">
                                                 {{mes.content}}
                                             </p>
                                         </div>
-                                        <span class="col-md-12 " style="color: white;"> <small>{{mes.time}} </small></span>
+                                        <span class="col-md-12 " style="color: white;"> <small>{{mes.time.split('.')[0]}} </small></span>
                                     </div>
                             
                                 </div>
@@ -76,6 +75,11 @@
                         <section class="col-md-11">
                             <input class="form-control" placeholder="Message" ngModel name="message" required> 
                         </section>
+
+                        <!-- <section class="col-md-1">
+                            <input type="file" class="form-control"  ngModel name="file"  style="width: 10px;"> 
+                        </section> -->
+
                         <section class="col-md-1">
                             <button type="submit" class="btn btn-outline-primary" style="width: 100%; font-size: 13px;">Send</button> 
                         </section>
